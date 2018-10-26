@@ -1,11 +1,8 @@
 #include "uart.h"
+#include "stdio.h"
 
-/************************************************************************************************
-函数名:void uart_config(uint32_t Baud_rate)
-函数功能:串口0初始化管脚配置
-参数:无
-返回值:无
-*************************************************************************************************/
+_Uart Uart0;
+
 void uart_config0(uint32_t Baud_rate)
 {
 	
@@ -29,6 +26,8 @@ void uart_config0(uint32_t Baud_rate)
 	NVIC_EnableIRQ(UART0_IRQn);//智能终端
 
 }
+
+
 #define debug_print
 #ifdef debug_print
 struct __FILE 

@@ -4,6 +4,7 @@
 #include "lpc17xx.h"
 #include "lpc17xx_gpio.h"
 #include "lpc17xx_uart.h"
+#include "uart.h"
 
 #endif
 

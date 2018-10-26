@@ -19,6 +19,12 @@ int main(void)
 		SET_GPIO_L(LED1);
 		delay_ms(500);
 		printf("test\r\n");
+		if(Uart0.len != 0)
+		{
+			printf("re=%s\r\n",Uart0.Rxbuff);
+			Uart0.len = 0;
+			memset(Uart0.Rxbuff,0,sizeof(Uart0.Rxbuff));
+		}
 	}
 }
 

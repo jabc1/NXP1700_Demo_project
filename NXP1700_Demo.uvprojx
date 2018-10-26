@@ -336,7 +336,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>.\Lib\include;.\User;.\Core;.\Sys</IncludePath>
+              <IncludePath>.\Lib\include;.\User;.\Core;.\Sys;.\Syslib</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -614,6 +614,28 @@
         </Group>
         <Group>
           <GroupName>Syslib</GroupName>
+          <Files>
+            <File>
+              <FileName>fifo.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Syslib\fifo.c</FilePath>
+            </File>
+            <File>
+              <FileName>fifo.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Syslib\fifo.h</FilePath>
+            </File>
+            <File>
+              <FileName>queue_jk.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Syslib\queue_jk.c</FilePath>
+            </File>
+            <File>
+              <FileName>queue_jk.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Syslib\queue_jk.h</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>User</GroupName>

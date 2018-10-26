@@ -566,6 +566,11 @@
               <FilePath>.\Sys\base.h</FilePath>
             </File>
             <File>
+              <FileName>debugprint.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Sys\debugprint.c</FilePath>
+            </File>
+            <File>
               <FileName>uart.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Sys\uart.c</FilePath>

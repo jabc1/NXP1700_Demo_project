@@ -1,6 +1,27 @@
 #include "uart.h"
 
-_Uart Uart0;
+_Uart Uart;
+QueueType Uart0;
+QueueType Uart1;
+
+void Queue_init()
+{
+	Queue_Init(&Uart0,Uart.Rxbuff,UART_LEN,2);
+	Queue_Init(&Uart0,Uart.Txbuff,UART_LEN,2);
+}
+
+void Queue_test()
+{
+	u8 temp;
+	if(Queue_Query(&Uart0,&temp))
+	{
+		Uart.len=0;
+		while(Queue_Get(&Uart0,&Uart.Txbuff[Uart.len++]))
+			;
+		Uart.Txbuff[Uart.len] = 0;
+		printf("re=%s\r\n",Uart.Txbuff);
+	}
+}
 
 void uart_config0(uint32_t Baud_rate)
 {

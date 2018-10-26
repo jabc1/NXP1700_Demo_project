@@ -21,7 +21,7 @@ void EINT0_IRQHandler()
 
 void UART0_IRQHandler(void)
 {
-	
+	u8 temp;
 	uint32_t flag;
 	NVIC_ClearPendingIRQ(UART0_IRQn);
 	flag=UART_GetIntId(LPC_UART0);
@@ -30,7 +30,8 @@ void UART0_IRQHandler(void)
 	{
 		if((UART_GetLineStatus(LPC_UART0)&0x01))//读取LSR时中断会被清除
 		{
-			Uart0.Rxbuff[Uart0.len++]=UART_ReceiveByte(LPC_UART0);
+			temp = UART_ReceiveByte(LPC_UART0);
+			Queue_Put(&Uart0,&temp);
 		}
 	}
 }

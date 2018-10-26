@@ -5,6 +5,9 @@
 #include "delay.h"
 #include "gpio.h"
 #include "uart.h"
+#include "fifo.h"
+#include "queue_jk.h"
+
 
 int main(void)
 {
@@ -12,19 +15,17 @@ int main(void)
 	delay_init();
 	uart_config0(115200);
 	LPC_GPIO_init();
+	Queue_init();
 	while(1)
 	{
-		SET_GPIO_H(LED1);
-		delay_ms(500);
-		SET_GPIO_L(LED1);
-		delay_ms(500);
-		printf("test\r\n");
-		if(Uart0.len != 0)
-		{
-			printf("re=%s\r\n",Uart0.Rxbuff);
-			Uart0.len = 0;
-			memset(Uart0.Rxbuff,0,sizeof(Uart0.Rxbuff));
-		}
+//		SET_GPIO_H(LED1);
+//		delay_ms(500);
+//		SET_GPIO_L(LED1);
+//		delay_ms(500);
+//		printf("test\r\n");
+		Queue_test();
+		delay_ms(150);
+
 	}
 }
 

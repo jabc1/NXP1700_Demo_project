@@ -25,8 +25,8 @@
 
 #ifndef __LPC17xx_H__
 #define __LPC17xx_H__
-#include "base.h"
-#include "stdio.h"
+
+
 #include "stdarg.h"
 #include <stdint.h>
 #include <stdlib.h>

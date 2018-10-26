@@ -16,7 +16,7 @@ void delay_ms (unsigned long tick);
  **********************************************************************/
 void SysTick_Handler (void)
 {
-  SysTickCnt++;
+	SysTickCnt++;
 }
 
 void delay_init(void)
@@ -31,13 +31,12 @@ void delay_init(void)
  **********************************************************************/
 void delay_ms (unsigned long tick) 
 {
-  unsigned long systickcnt;
-
-  systickcnt = SysTickCnt;
-  while ((SysTickCnt - systickcnt) < tick);
+	unsigned long systickcnt;
+	systickcnt = SysTickCnt;
+	while ((SysTickCnt - systickcnt) < tick);
 }
 
-void delay_us (unsigned long zms) 
+void delay_us(unsigned long zms) 
 {
  	unsigned long i,j;
 	for(j=zms;j>0;j--)

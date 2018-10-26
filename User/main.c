@@ -1,4 +1,3 @@
-#include "stdio.h"
 #include "LPC17xx.h"
 #include "system_LPC17xx.h"
 #include "lpc17xx_libcfg_default.h"

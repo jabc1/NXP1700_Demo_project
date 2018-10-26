@@ -561,6 +561,11 @@
           <GroupName>Sys</GroupName>
           <Files>
             <File>
+              <FileName>base.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Sys\base.h</FilePath>
+            </File>
+            <File>
               <FileName>uart.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Sys\uart.c</FilePath>

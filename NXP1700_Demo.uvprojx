@@ -441,11 +441,6 @@
               <FilePath>.\Lib\source\lpc17xx_clkpwr.c</FilePath>
             </File>
             <File>
-              <FileName>lpc17xx_libcfg_default.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Lib\source\lpc17xx_libcfg_default.c</FilePath>
-            </File>
-            <File>
               <FileName>lpc17xx_systick.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Lib\source\lpc17xx_systick.c</FilePath>
@@ -459,6 +454,106 @@
               <FileName>lpc17xx_pinsel.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Lib\source\lpc17xx_pinsel.c</FilePath>
+            </File>
+            <File>
+              <FileName>lpc17xx_gpio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Lib\source\lpc17xx_gpio.c</FilePath>
+            </File>
+            <File>
+              <FileName>lpc17xx_timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Lib\source\lpc17xx_timer.c</FilePath>
+            </File>
+            <File>
+              <FileName>lpc17xx_gpdma.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Lib\source\lpc17xx_gpdma.c</FilePath>
+            </File>
+            <File>
+              <FileName>lpc17xx_adc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Lib\source\lpc17xx_adc.c</FilePath>
+            </File>
+            <File>
+              <FileName>lpc17xx_can.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Lib\source\lpc17xx_can.c</FilePath>
+            </File>
+            <File>
+              <FileName>lpc17xx_dac.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Lib\source\lpc17xx_dac.c</FilePath>
+            </File>
+            <File>
+              <FileName>lpc17xx_emac.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Lib\source\lpc17xx_emac.c</FilePath>
+            </File>
+            <File>
+              <FileName>lpc17xx_exti.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Lib\source\lpc17xx_exti.c</FilePath>
+            </File>
+            <File>
+              <FileName>lpc17xx_i2c.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Lib\source\lpc17xx_i2c.c</FilePath>
+            </File>
+            <File>
+              <FileName>lpc17xx_i2s.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Lib\source\lpc17xx_i2s.c</FilePath>
+            </File>
+            <File>
+              <FileName>lpc17xx_libcfg_default.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Lib\source\lpc17xx_libcfg_default.c</FilePath>
+            </File>
+            <File>
+              <FileName>lpc17xx_mcpwm.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Lib\source\lpc17xx_mcpwm.c</FilePath>
+            </File>
+            <File>
+              <FileName>lpc17xx_nvic.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Lib\source\lpc17xx_nvic.c</FilePath>
+            </File>
+            <File>
+              <FileName>lpc17xx_pwm.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Lib\source\lpc17xx_pwm.c</FilePath>
+            </File>
+            <File>
+              <FileName>lpc17xx_qei.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Lib\source\lpc17xx_qei.c</FilePath>
+            </File>
+            <File>
+              <FileName>lpc17xx_rit.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Lib\source\lpc17xx_rit.c</FilePath>
+            </File>
+            <File>
+              <FileName>lpc17xx_rtc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Lib\source\lpc17xx_rtc.c</FilePath>
+            </File>
+            <File>
+              <FileName>lpc17xx_spi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Lib\source\lpc17xx_spi.c</FilePath>
+            </File>
+            <File>
+              <FileName>lpc17xx_ssp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Lib\source\lpc17xx_ssp.c</FilePath>
+            </File>
+            <File>
+              <FileName>lpc17xx_wdt.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Lib\source\lpc17xx_wdt.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -474,6 +569,36 @@
               <FileName>uart.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Sys\uart.h</FilePath>
+            </File>
+            <File>
+              <FileName>delay.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Sys\delay.c</FilePath>
+            </File>
+            <File>
+              <FileName>delay.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Sys\delay.h</FilePath>
+            </File>
+            <File>
+              <FileName>time.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Sys\time.c</FilePath>
+            </File>
+            <File>
+              <FileName>time.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Sys\time.h</FilePath>
+            </File>
+            <File>
+              <FileName>gpio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Sys\gpio.c</FilePath>
+            </File>
+            <File>
+              <FileName>gpio.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Sys\gpio.h</FilePath>
             </File>
           </Files>
         </Group>

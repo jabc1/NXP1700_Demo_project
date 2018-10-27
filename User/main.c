@@ -7,6 +7,8 @@
 #include "uart.h"
 #include "fifo.h"
 #include "queue_jk.h"
+#include "time.h"
+extern void LPC_TIEM0_init(void);
 
 
 int main(void)
@@ -15,6 +17,7 @@ int main(void)
 	delay_init();
 	uart_config0(115200);
 	LPC_GPIO_init();
+	LPC_TIEM0_init();
 	Queue_init();
 	while(1)
 	{

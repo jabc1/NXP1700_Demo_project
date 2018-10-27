@@ -10,7 +10,7 @@
 #include "time.h"
 #include "runflag.h"
 extern void LPC_TIEM0_init(void);
-
+static u8 flag=0;
 int main(void)
 {
 	SystemInit();
@@ -20,13 +20,9 @@ int main(void)
 	LPC_TIEM0_init();
 	RunFlagInit();
 	Queue_init();
+	
 	while(1)
 	{
-//		SET_GPIO_H(LED1);
-//		delay_ms(500);
-//		SET_GPIO_L(LED1);
-//		delay_ms(500);
-//		printf("test\r\n");
 		RunFlagHandler();
 		if(RunFlag.Hz100)
 		{
@@ -35,6 +31,18 @@ int main(void)
 		if(RunFlag.Hz1)
 		{
 			printf("test runflag test");
+		}
+		if(RunFlag.Hz4)
+		{
+			flag=!flag;
+			if(flag)
+			{
+				SET_GPIO_H(LED2);
+			}
+			else
+			{
+				SET_GPIO_L(LED2);
+			}
 		}
 
 	}

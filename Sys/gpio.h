@@ -1,7 +1,8 @@
 #ifndef _gpio_h
 #define _gpio_h
 #include "lpc17xx_gpio.h"
-
+#include "base.h"
+extern u32 status;
 #define		LED1				2
 #define		LED1_PIN			1<<0
 #define		LED2				2
@@ -18,8 +19,9 @@
 #define		SET_GPIO_IN(x)		GPIO_SetDir(x,x##_PIN,GPIO_IN)
 #define		SET_GPIO_H(x)		GPIO_SetValue(x,x##_PIN)
 #define		SET_GPIO_L(x)		GPIO_ClearValue(x,x##_PIN)
-#define		ReadGPIO(x)			(GPIO_ReadValue(x)&(1<<x##_PIN))
 
+#define		ReadGPIO(x)			GPIO_ReadValue(x)&(1<<x##_PIN))
+		
 
 void LPC_GPIO_init(void);
 

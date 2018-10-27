@@ -20,7 +20,6 @@ int main(void)
 	LPC_TIEM0_init();
 	RunFlagInit();
 	Queue_init();
-	
 	while(1)
 	{
 		RunFlagHandler();

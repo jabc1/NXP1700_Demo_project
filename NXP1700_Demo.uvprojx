@@ -336,7 +336,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>.\Lib\include;.\User;.\Core;.\Sys;.\Syslib</IncludePath>
+              <IncludePath>.\Lib\include;.\User;.\Core;.\Sys;.\Syslib;.\APP</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -679,6 +679,28 @@
         </Group>
         <Group>
           <GroupName>App</GroupName>
+          <Files>
+            <File>
+              <FileName>esp8266.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\APP\esp8266.c</FilePath>
+            </File>
+            <File>
+              <FileName>esp8266.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\APP\esp8266.h</FilePath>
+            </File>
+            <File>
+              <FileName>wifipack.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\APP\wifipack.c</FilePath>
+            </File>
+            <File>
+              <FileName>wifipack.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\APP\wifipack.h</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>ReadME</GroupName>

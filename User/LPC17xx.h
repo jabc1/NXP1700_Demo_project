@@ -27,10 +27,7 @@
 #define __LPC17xx_H__
 
 
-#include "stdarg.h"
-#include <stdint.h>
-#include <stdlib.h>
-#include <string.h>
+
 
 /*
  * ==========================================================================

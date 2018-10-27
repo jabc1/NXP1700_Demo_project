@@ -7,17 +7,19 @@
 #include "uart.h"
 #include "fifo.h"
 #include "queue_jk.h"
-#include "time.h"
+#include "timexx.h"
 #include "runflag.h"
-extern void LPC_TIEM0_init(void);
+#include "debugprint.h"
+
 static u8 flag=0;
 int main(void)
 {
 	SystemInit();
 	delay_init();
-	uart_config0(115200);
 	LPC_GPIO_init();
 	LPC_TIEM0_init();
+	uart_config0(115200);
+	uart_config2(115200);
 	RunFlagInit();
 	Queue_init();
 	while(1)
@@ -29,7 +31,8 @@ int main(void)
 		}
 		if(RunFlag.Hz1)
 		{
-			printf("test runflag test");
+			printf("uart0 runflag test");
+			USART2_Printf("%s","uart2 runflag test");
 		}
 		if(RunFlag.Hz4)
 		{

@@ -22,7 +22,7 @@ RunFlag_Type RunFlag;
 
 #define FREQ_FLAG(freq) FreqCalc(TICK_FREQ/freq, &(RunFlag.Hz##freq), &(RunFlag.Hz##freq##Tick))
 
-void FreqCalc(uint32_t FreqFactor, uint8_t* pFlag, uint32_t* pTick)//
+void FreqCalc(uint32_t FreqFactor, uint8_t* pFlag, uint32_t* pTick)//产生中断标志
 {
     if(!PriorityFlag && RunTick - *pTick >= FreqFactor)
     {

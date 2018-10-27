@@ -571,6 +571,11 @@
               <FilePath>.\Sys\debugprint.c</FilePath>
             </File>
             <File>
+              <FileName>debugprint.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Sys\debugprint.h</FilePath>
+            </File>
+            <File>
               <FileName>uart.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Sys\uart.c</FilePath>
@@ -591,16 +596,6 @@
               <FilePath>.\Sys\delay.h</FilePath>
             </File>
             <File>
-              <FileName>time.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Sys\time.c</FilePath>
-            </File>
-            <File>
-              <FileName>time.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Sys\time.h</FilePath>
-            </File>
-            <File>
               <FileName>gpio.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Sys\gpio.c</FilePath>
@@ -609,6 +604,16 @@
               <FileName>gpio.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Sys\gpio.h</FilePath>
+            </File>
+            <File>
+              <FileName>timexx.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Sys\timexx.c</FilePath>
+            </File>
+            <File>
+              <FileName>timexx.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Sys\timexx.h</FilePath>
             </File>
           </Files>
         </Group>

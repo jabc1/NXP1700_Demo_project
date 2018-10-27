@@ -26,10 +26,11 @@ typedef struct
 extern _Uart Uart;
 extern	QueueType Uart0;
 extern	QueueType Uart1;
+
 void Queue_init(void);
 void Queue_test(void);
 void uart_config0(uint32_t Baud_rate);
-
+void uart_config2(uint32_t Baud_rate);
 
 #endif
 

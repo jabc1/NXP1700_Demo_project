@@ -62,10 +62,10 @@ u8 get_link_info(u8 *scr)
 u8* esp_8266_check_cmd(u8 *str)
 {
 	char *strx=0;
-	static _Uart2fifo esp_uart;
+	static _Uart esp_uart;
 	u16 i = 0;
 	memset(esp_uart.Txbuff,0,sizeof(esp_uart.Txbuff));
-	while(Queue_Get(&Uart2queue,&esp_uart.Txbuff[i++]))
+	while(Queue_Get(&Uart0,&esp_uart.Txbuff[i++]))
 	{
 		;
 	}
@@ -77,7 +77,7 @@ u8* esp_8266_check_cmd(u8 *str)
 u8* esp_8266_check_cmd2(u8 *str)//STAIP
 {
 	u8 *strx=NULL;
-	static _Uart2fifo esp_uart;
+	static _Uart esp_uart;
 	u16 i = 0;
 	memset(esp_uart.Txbuff,0,sizeof(esp_uart.Txbuff));
 //	strx = (u8 *)malloc(100 * sizeof(u8)); 
@@ -85,7 +85,7 @@ u8* esp_8266_check_cmd2(u8 *str)//STAIP
 //	{ 
 //		return NULL;
 //	}
-	while(Queue_Get(&Uart2queue,&esp_uart.Txbuff[i++]))
+	while(Queue_Get(&Uart0,&esp_uart.Txbuff[i++]))
 	{
 		;
 	}
@@ -115,7 +115,7 @@ u8 esp_8266_send_cmd(u8 *cmd,u8 *ack,u16 waittime)
 		while(--waittime)
 		{
 			delay_ms(10);
-			if(Queue_Query(&Uart2queue,&temp))
+			if(Queue_Query(&Uart0,&temp))
 			{
 				if(NULL==strcmp((const char *)"STAIP",(char *)ack))
 				{

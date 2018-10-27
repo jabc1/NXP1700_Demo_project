@@ -59,7 +59,15 @@ void RunFlagHandler(void)
 {
 	PriorityFlag = 0;
     RunTick = SysTickCnt;
-	FREQ_FLAG(1);
+    FREQ_FLAG(1000);//1000hz
+    FREQ_FLAG(500);//500hz
+    FREQ_FLAG(250);//250hz
+    FREQ_FLAG(100);//10hz
+    FREQ_FLAG(50);//50hz
+    FREQ_FLAG(20);//20hz
+    FREQ_FLAG(10);//10hz
+    FREQ_FLAG(4);//4hz
+    FREQ_FLAG(1);//1hz
 }
 
 

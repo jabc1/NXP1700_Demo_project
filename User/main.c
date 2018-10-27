@@ -28,7 +28,10 @@ int main(void)
 //		delay_ms(500);
 //		printf("test\r\n");
 		RunFlagHandler();
-		Queue_test();
+		if(RunFlag.Hz100)
+		{
+			Queue_test();
+		}
 		if(RunFlag.Hz1)
 		{
 			printf("test runflag test");

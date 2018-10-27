@@ -1,5 +1,5 @@
 #include "uart.h"
-
+#include "debugprint.h"
 _Uart Uart;
 _Uart Uart2t;
 QueueType Uart0;
@@ -22,7 +22,17 @@ void Queue_test()
 		while(Queue_Get(&Uart0,&Uart.Txbuff[Uart.len++]))
 			;
 		Uart.Txbuff[Uart.len] = 0;
-		printf("re=%s\r\n",Uart.Txbuff);
+		printf("%s",Uart.Txbuff);
+		memset(Uart.Txbuff,0,sizeof(Uart.Txbuff));
+	}
+	if(Queue_Query(&Uart2,&temp))
+	{
+		Uart2t.len=0;
+		while(Queue_Get(&Uart2,&Uart2t.Txbuff[Uart2t.len++]))
+			;
+		Uart2t.Txbuff[Uart2t.len] = 0;
+		USART2_Printf("%s",Uart2t.Txbuff);
+		memset(Uart2t.Txbuff,0,sizeof(Uart2t.Txbuff));
 	}
 }
 

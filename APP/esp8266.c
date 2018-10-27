@@ -65,7 +65,7 @@ u8* esp_8266_check_cmd(u8 *str)
 	static _Uart esp_uart;
 	u16 i = 0;
 	memset(esp_uart.Txbuff,0,sizeof(esp_uart.Txbuff));
-	while(Queue_Get(&Uart0,&esp_uart.Txbuff[i++]))
+	while(Queue_Get(&Uart2,&esp_uart.Txbuff[i++]))
 	{
 		;
 	}
@@ -85,7 +85,7 @@ u8* esp_8266_check_cmd2(u8 *str)//STAIP
 //	{ 
 //		return NULL;
 //	}
-	while(Queue_Get(&Uart0,&esp_uart.Txbuff[i++]))
+	while(Queue_Get(&Uart2,&esp_uart.Txbuff[i++]))
 	{
 		;
 	}
@@ -115,7 +115,7 @@ u8 esp_8266_send_cmd(u8 *cmd,u8 *ack,u16 waittime)
 		while(--waittime)
 		{
 			delay_ms(10);
-			if(Queue_Query(&Uart0,&temp))
+			if(Queue_Query(&Uart2,&temp))
 			{
 				if(NULL==strcmp((const char *)"STAIP",(char *)ack))
 				{
@@ -154,7 +154,7 @@ void esp8266_softreset()
 	while(esp_8266_send_cmd(BACKAT,"+++",200));
 	delay_ms(1500);
 	while(esp_8266_send_cmd(CLOSESER,"OK",200));
-	while(esp_8266_send_cmd(EXITLINK,"OK",200));
+	esp_8266_send_cmd(EXITLINK,"OK",200);
 }
 
 void esp8266_function()
@@ -165,7 +165,7 @@ void esp8266_function()
 void esp8266_init()
 {
 	eps8266_reset();
-	while(esp_8266_send_cmd(AT1,"OK",20));//检查WIFI模块是否在线
+//	while(esp_8266_send_cmd(AT1,"OK",20));//检查WIFI模块是否在线
 	while(esp_8266_send_cmd("AT\r\n","OK",20));//检查WIFI模块是否在线
 	while(esp_8266_send_cmd("ATE0\r\n","OK",20));//关闭回显
 	esp_8266_send_cmd(CWMODE,"OK",350);//配置wifi mode

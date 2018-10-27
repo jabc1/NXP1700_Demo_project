@@ -24,8 +24,9 @@ typedef struct
 #pragma pack(pop)
 
 extern _Uart Uart;
-extern	QueueType Uart0;
-extern	QueueType Uart1;
+extern _Uart Uart2t;
+extern QueueType Uart0;
+extern QueueType Uart2;
 
 void Queue_init(void);
 void Queue_test(void);

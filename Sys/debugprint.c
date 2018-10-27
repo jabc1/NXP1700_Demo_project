@@ -21,9 +21,9 @@ void _sys_exit(int x)
 } 
 int fputc(int ch, FILE *f)
 {      
-	while (!(LPC_UART0->LSR & 0x20))
+	while (!(LPC_UART2->LSR & 0x20))
 		;/*读bit5 0 为有数据，1 为发送完成*/
-    (LPC_UART0->THR = ch);    
+    (LPC_UART2->THR = ch);    
 	return ch;
 }
 #endif
@@ -33,10 +33,10 @@ void RS485_Send_Data(char *buf,uint32_t len)
 	uint16_t  t;
 	for(t=0;t<len;t++)
 	{
-		while (!(LPC_UART2->LSR & 0x20));
-		(LPC_UART2->THR = buf[t]); 
+		while (!(LPC_UART0->LSR & 0x20));
+		(LPC_UART0->THR = buf[t]); 
 	}    
-	while (!(LPC_UART2->LSR & 0x20));
+	while (!(LPC_UART0->LSR & 0x20));
 }
 
 void USART2_Printf(const char *fmt, ...)

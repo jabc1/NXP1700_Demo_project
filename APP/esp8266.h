@@ -15,7 +15,7 @@
 
 #define test
 #ifdef test
-#define 	CIPSTART    "AT+CIPSTART=\"TCP\",\"192.168.1.101\",3033\r\n"//连接远端
+#define 	CIPSTART    "AT+CIPSTART=\"TCP\",\"192.168.1.100\",3033\r\n"//连接远端
 #else
 #define 	CIPSTART    "AT+CIPSTART=\"TCP\",\"119.23.75.37\",3000\r\n"//连接远端
 #endif

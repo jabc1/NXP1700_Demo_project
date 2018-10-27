@@ -1,4 +1,5 @@
 #include "LPC17xx.h"
+#include "debugprint.h"
 #include "system_LPC17xx.h"
 #include "lpc17xx_libcfg_default.h"
 #include "lpc17xx_pinsel.h"
@@ -9,7 +10,7 @@
 #include "queue_jk.h"
 #include "timexx.h"
 #include "runflag.h"
-#include "debugprint.h"
+#include "esp8266.h"
 
 static u8 flag=0;
 int main(void)
@@ -22,24 +23,25 @@ int main(void)
 	uart_config2(115200);
 	RunFlagInit();
 	Queue_init();
+	esp8266_init();
+	//esp8266_softreset();
 	while(1)
 	{
 		RunFlagHandler();
-		if(RunFlag.Hz100)
+		if(RunFlag.Hz10)
 		{
-			Queue_test();
+			//Queue_test();
 		}
 		if(RunFlag.Hz1)
 		{
-			printf("uart0 runflag test");
-			USART2_Printf("%s","uart2 runflag test");
-		}
-		if(RunFlag.Hz4)
-		{
+			while(esp_8266_send_cmd("printfuart2\r\n","OK",200));
+//			USART2_Printf("USART2_Printfuart0");
 			flag=!flag;
 			if(flag)
 			{
 				SET_GPIO_H(LED2);
+//				esp8266_init();
+//				esp8266_softreset();
 			}
 			else
 			{

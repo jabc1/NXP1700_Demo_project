@@ -8,8 +8,8 @@
 #include "fifo.h"
 #include "queue_jk.h"
 #include "time.h"
+#include "runflag.h"
 extern void LPC_TIEM0_init(void);
-
 
 int main(void)
 {
@@ -18,6 +18,7 @@ int main(void)
 	uart_config0(115200);
 	LPC_GPIO_init();
 	LPC_TIEM0_init();
+	RunFlagInit();
 	Queue_init();
 	while(1)
 	{
@@ -26,8 +27,12 @@ int main(void)
 //		SET_GPIO_L(LED1);
 //		delay_ms(500);
 //		printf("test\r\n");
+		RunFlagHandler();
 		Queue_test();
-		delay_ms(150);
+		if(RunFlag.Hz1)
+		{
+			printf("test runflag test");
+		}
 
 	}
 }

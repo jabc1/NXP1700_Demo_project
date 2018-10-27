@@ -635,6 +635,16 @@
               <FileType>5</FileType>
               <FilePath>.\Syslib\queue_jk.h</FilePath>
             </File>
+            <File>
+              <FileName>runflag.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Syslib\runflag.c</FilePath>
+            </File>
+            <File>
+              <FileName>runflag.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Syslib\runflag.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

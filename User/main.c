@@ -23,6 +23,7 @@ int main(void)
 	uart_config2(115200);
 	RunFlagInit();
 	Queue_init();
+	esp8266_softreset();
 	esp8266_init();
 	//esp8266_softreset();
 	while(1)
@@ -34,14 +35,12 @@ int main(void)
 		}
 		if(RunFlag.Hz1)
 		{
-			while(esp_8266_send_cmd("printfuart2\r\n","OK",200));
-//			USART2_Printf("USART2_Printfuart0");
 			flag=!flag;
 			if(flag)
 			{
 				SET_GPIO_H(LED2);
-//				esp8266_init();
-//				esp8266_softreset();
+				esp_8266_send_cmd("printfuart2\r\n","OK",200);
+				printf("mac=%s\r\n",Idinfo.macbuff);
 			}
 			else
 			{
@@ -53,8 +52,6 @@ int main(void)
 }
 
 
-
-//中断服务函数，放在LPC17xx_it.C文件中
 /******************************************************************************
                            End Of File
 ******************************************************************************/

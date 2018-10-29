@@ -650,6 +650,16 @@
               <FileType>5</FileType>
               <FilePath>.\Syslib\runflag.h</FilePath>
             </File>
+            <File>
+              <FileName>queue.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Syslib\queue.c</FilePath>
+            </File>
+            <File>
+              <FileName>queue.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Syslib\queue.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

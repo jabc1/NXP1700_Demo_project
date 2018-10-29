@@ -153,7 +153,7 @@ void esp8266_softreset()
 {
 	while(esp_8266_send_cmd(BACKAT,"+++",200));
 	delay_ms(1500);
-	while(esp_8266_send_cmd(CLOSESER,"OK",200));
+	esp_8266_send_cmd(CLOSESER,"OK",200);
 	esp_8266_send_cmd(EXITLINK,"OK",200);
 }
 
@@ -165,7 +165,7 @@ void esp8266_function()
 void esp8266_init()
 {
 	eps8266_reset();
-//	while(esp_8266_send_cmd(AT1,"OK",20));//检查WIFI模块是否在线
+	while(esp_8266_send_cmd(AT1,"OK",20));//检查WIFI模块是否在线
 	while(esp_8266_send_cmd("AT\r\n","OK",20));//检查WIFI模块是否在线
 	while(esp_8266_send_cmd("ATE0\r\n","OK",20));//关闭回显
 	esp_8266_send_cmd(CWMODE,"OK",350);//配置wifi mode

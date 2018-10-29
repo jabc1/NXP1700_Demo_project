@@ -660,6 +660,16 @@
               <FileType>5</FileType>
               <FilePath>.\Syslib\queue.h</FilePath>
             </File>
+            <File>
+              <FileName>queue_f.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Syslib\queue_f.c</FilePath>
+            </File>
+            <File>
+              <FileName>queue_f.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Syslib\queue_f.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

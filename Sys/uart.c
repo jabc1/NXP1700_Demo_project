@@ -1,6 +1,6 @@
 #include "uart.h"
 #include "debugprint.h"
-#include "queue.h"
+#include "queue_f.h"
 _Uart Uart;
 _Uart Uart2t;
 QueueType Uart0;
@@ -17,24 +17,32 @@ void Queue_init()
 void Queue_test()
 {
 	u8 temp;
-	if(Queue_Query(&Uart0,&temp))
+	if(fifo_getc(&Uart3,&temp))
 	{
-		Uart.len=0;
-		while(Queue_Get(&Uart0,&Uart.Txbuff[Uart.len++]))
-			;
-		Uart.Txbuff[Uart.len] = 0;
-		printf("%s",Uart.Txbuff);
-		memset(Uart.Txbuff,0,sizeof(Uart.Txbuff));
+		Uart3f.Rxbuff[0] = temp;
+		Uart3f.len3 = 1;
+		while(fifo_getc(&Uart3,&Uart3f.Rxbuff[Uart3f.len3++]));
+		USART2_Printf("%s",Uart3f.Rxbuff);
+		memset(Uart3f.Rxbuff,0,sizeof(Uart3f.Rxbuff));		
 	}
-	if(Queue_Query(&Uart2,&temp))
-	{
-		Uart2t.len=0;
-		while(Queue_Get(&Uart2,&Uart2t.Txbuff[Uart2t.len++]))
-			;
-		Uart2t.Txbuff[Uart2t.len] = 0;
-		USART2_Printf("%s",Uart2t.Txbuff);
-		memset(Uart2t.Txbuff,0,sizeof(Uart2t.Txbuff));
-	}
+//	if(Queue_Query(&Uart0,&temp))
+//	{
+//		Uart.len=0;
+//		while(Queue_Get(&Uart0,&Uart.Txbuff[Uart.len++]))
+//			;
+//		Uart.Txbuff[Uart.len] = 0;
+//		printf("%s",Uart.Txbuff);
+//		memset(Uart.Txbuff,0,sizeof(Uart.Txbuff));
+//	}
+//	if(Queue_Query(&Uart2,&temp))
+//	{
+//		Uart2t.len=0;
+//		while(Queue_Get(&Uart2,&Uart2t.Txbuff[Uart2t.len++]))
+//			;
+//		Uart2t.Txbuff[Uart2t.len] = 0;
+//		USART2_Printf("%s",Uart2t.Txbuff);
+//		memset(Uart2t.Txbuff,0,sizeof(Uart2t.Txbuff));
+//	}
 }
 
 void uart_config0(uint32_t Baud_rate)
@@ -81,7 +89,8 @@ void UART0_IRQHandler(void)
 		if((UART_GetLineStatus(LPC_UART0)&0x01))//读取LSR时中断会被清除
 		{
 			temp = UART_ReceiveByte(LPC_UART0);
-			Queue_Put(&Uart0,&temp);
+			if(fifo_putc(&Uart3,temp));
+			//Queue_Put(&Uart0,&temp);
 		}
 //	}
 }

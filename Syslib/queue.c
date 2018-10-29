@@ -7,7 +7,7 @@
 ******************************************************************************
 */
 #include "queue.h"
-#include "debugprint.h"
+
 
 static u32 fifo_surplusSize(struct fifo_data *head); //队列剩余空间判断
 static u8 fifo_full(struct fifo_data *head);         //队满判断

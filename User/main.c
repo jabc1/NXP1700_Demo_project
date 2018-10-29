@@ -11,7 +11,7 @@
 #include "timexx.h"
 #include "runflag.h"
 #include "esp8266.h"
-#include  "queue.h"
+#include "queue_f.h"
 
 static u8 flag=0;
 int main(void)
@@ -24,15 +24,15 @@ int main(void)
 	uart_config2(115200);
 	RunFlagInit();
 	Queue_init();
+	fifo_init();
 //	esp8266_softreset();
 //	esp8266_init();
-	//esp8266_softreset();
 	while(1)
 	{
 		RunFlagHandler();
 		if(RunFlag.Hz10)
 		{
-			//Queue_test();
+//			Queue_test();
 		}
 		if(RunFlag.Hz1)
 		{

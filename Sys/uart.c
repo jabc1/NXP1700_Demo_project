@@ -17,11 +17,13 @@ void Queue_init()
 void Queue_test()
 {
 	u8 temp;
-	if(fifo_getc(&Uart3,&temp))
+//	if(fifo_getc(&Uart3,&temp))
+	if(!fifo_empty(&Uart3))
 	{
-		Uart3f.Rxbuff[0] = temp;
-		Uart3f.len3 = 1;
-		while(fifo_getc(&Uart3,&Uart3f.Rxbuff[Uart3f.len3++]));
+//		Uart3f.Rxbuff[0] = temp;
+		Uart3f.len3 = 0;
+//		while(fifo_getc(&Uart3,&Uart3f.Rxbuff[Uart3f.len3++]));
+		fifo_gets(&Uart3,&Uart3f.Rxbuff[Uart3f.len3++],50);
 		USART2_Printf("%s",Uart3f.Rxbuff);
 		memset(Uart3f.Rxbuff,0,sizeof(Uart3f.Rxbuff));		
 	}

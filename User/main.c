@@ -32,7 +32,7 @@ int main(void)
 		RunFlagHandler();
 		if(RunFlag.Hz10)
 		{
-//			Queue_test();
+			Queue_test();
 		}
 		if(RunFlag.Hz1)
 		{

@@ -11,6 +11,7 @@
 #include "timexx.h"
 #include "runflag.h"
 #include "esp8266.h"
+#include  "queue.h"
 
 static u8 flag=0;
 int main(void)
@@ -23,8 +24,8 @@ int main(void)
 	uart_config2(115200);
 	RunFlagInit();
 	Queue_init();
-	esp8266_softreset();
-	esp8266_init();
+//	esp8266_softreset();
+//	esp8266_init();
 	//esp8266_softreset();
 	while(1)
 	{
@@ -39,8 +40,8 @@ int main(void)
 			if(flag)
 			{
 				SET_GPIO_H(LED2);
-				esp_8266_send_cmd("printfuart2\r\n","OK",200);
-				printf("mac=%s\r\n",Idinfo.macbuff);
+//				esp_8266_send_cmd("printfuart2\r\n","OK",200);
+//				printf("mac=%s\r\n",Idinfo.macbuff);
 			}
 			else
 			{

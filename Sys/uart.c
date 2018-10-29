@@ -1,5 +1,6 @@
 #include "uart.h"
 #include "debugprint.h"
+#include "queue.h"
 _Uart Uart;
 _Uart Uart2t;
 QueueType Uart0;

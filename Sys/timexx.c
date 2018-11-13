@@ -21,21 +21,6 @@ void LPC_TIEM0_init()//1ms
 	NVIC_SetPriority(TIMER0_IRQn, 4);
 
 	LPC_TIM0-> TCR  = 0x01;
-//	TIM_SET timParstruct;
-//	timParstruct.Mode = TIM_TIMER_MODE; //工作模式
-//	timParstruct.CapCtrl = ENABLE;//清除中断
-//	timParstruct.InitValue = 5000;//重装载值
-//	timParstruct.Prescaler = 1;//分频系数
-//	
-//	timParstruct.MatchOut = 100;
-//	timParstruct.MatchSet=100;
-//	timParstruct.TimValue = 10000;
-//	
-//	timParstruct.CaptureSet =0;
-//	timParstruct.IntClear = 0;
-//	TIM32Init(0,&timParstruct);
-	
-
 }
 
 /******************************************************************************************************** 

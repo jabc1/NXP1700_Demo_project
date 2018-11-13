@@ -12,6 +12,8 @@
 #include "runflag.h"
 #include "esp8266.h"
 #include "queue_f.h"
+#include "ostim.h"
+
 
 static u8 flag=0;
 int main(void)
@@ -24,7 +26,8 @@ int main(void)
 	uart_config2(115200);
 	RunFlagInit();
 	Queue_init();
-	fifo_init();
+	fifo_init1();
+
 //	esp8266_softreset();
 //	esp8266_init();
 	while(1)
@@ -34,7 +37,7 @@ int main(void)
 		{
 			Queue_test();
 		}
-		if(RunFlag.Hz1)
+		if(RunFlag.Hz20)
 		{
 			flag=!flag;
 			if(flag)

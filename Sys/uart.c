@@ -1,6 +1,7 @@
 #include "uart.h"
 #include "debugprint.h"
 #include "queue_f.h"
+#include "string.h"
 _Uart Uart;
 _Uart Uart2t;
 QueueType Uart0;
@@ -16,7 +17,7 @@ void Queue_init()
 
 void Queue_test()
 {
-	u8 temp;
+//	u8 temp;
 //	if(fifo_getc(&Uart3,&temp))
 	if(!fifo_empty(&Uart3))
 	{
@@ -91,7 +92,8 @@ void UART0_IRQHandler(void)
 		if((UART_GetLineStatus(LPC_UART0)&0x01))//读取LSR时中断会被清除
 		{
 			temp = UART_ReceiveByte(LPC_UART0);
-			if(fifo_putc(&Uart3,temp));
+			if(fifo_putc(&Uart3,temp))
+				;
 			//Queue_Put(&Uart0,&temp);
 		}
 //	}

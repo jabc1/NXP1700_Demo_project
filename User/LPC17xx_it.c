@@ -19,14 +19,14 @@ void TIMER0_IRQHandler()
 	//if(((LPC_TIM0->IR) &(1<<0))==(1<<0))
 	if(TIM_GetIntStatus(LPC_TIM0,TIM_MR0_INT)==SET)
 	{
-		if(flag)
-		{
-			SET_GPIO_H(LED1);
-		}
-		else
-		{
-			SET_GPIO_L(LED1);
-		}
+//		if(flag)
+//		{
+//			SET_GPIO_H(LED1);
+//		}
+//		else
+//		{
+//			SET_GPIO_L(LED1);
+//		}
 	}
 	//LPC_TIM0->IR |=(1<<0);
 	TIM_ClearIntPending(LPC_TIM0,TIM_MR0_INT);

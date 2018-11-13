@@ -336,7 +336,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>.\Lib\include;.\User;.\Core;.\Sys;.\Syslib;.\APP</IncludePath>
+              <IncludePath>.\Lib\include;.\User;.\Core;.\Sys;.\Syslib;.\APP;.\newfifo</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -615,6 +615,16 @@
               <FileType>5</FileType>
               <FilePath>.\Sys\timexx.h</FilePath>
             </File>
+            <File>
+              <FileName>ostim.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Sys\ostim.c</FilePath>
+            </File>
+            <File>
+              <FileName>ostim.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Sys\ostim.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -703,6 +713,21 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>newfifo</GroupName>
+          <Files>
+            <File>
+              <FileName>fifoBuffer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\newfifo\fifoBuffer.c</FilePath>
+            </File>
+            <File>
+              <FileName>fifoBuffer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\newfifo\fifoBuffer.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>App</GroupName>
           <Files>
             <File>
@@ -726,6 +751,9 @@
               <FilePath>.\APP\wifipack.h</FilePath>
             </File>
           </Files>
+        </Group>
+        <Group>
+          <GroupName>Task</GroupName>
         </Group>
         <Group>
           <GroupName>ReadME</GroupName>

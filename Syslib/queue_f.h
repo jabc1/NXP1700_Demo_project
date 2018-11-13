@@ -18,7 +18,7 @@ typedef struct
 extern _Uart3	Uart3f;
 extern struct fifo_data	Uart3;
 
-void fifo_init(void);
+void fifo_init1(void);
 
 
 

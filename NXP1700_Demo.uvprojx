@@ -725,6 +725,16 @@
               <FileType>5</FileType>
               <FilePath>.\newfifo\fifoBuffer.h</FilePath>
             </File>
+            <File>
+              <FileName>testfifo.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\newfifo\testfifo.c</FilePath>
+            </File>
+            <File>
+              <FileName>testfifo.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\newfifo\testfifo.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

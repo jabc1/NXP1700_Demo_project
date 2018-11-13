@@ -13,7 +13,7 @@
 #include "esp8266.h"
 #include "queue_f.h"
 #include "ostim.h"
-
+#include "testfifo.h"
 
 static u8 flag=0;
 int main(void)
@@ -27,7 +27,7 @@ int main(void)
 	RunFlagInit();
 	Queue_init();
 	fifo_init1();
-
+	testfifo_init();
 //	esp8266_softreset();
 //	esp8266_init();
 	while(1)
